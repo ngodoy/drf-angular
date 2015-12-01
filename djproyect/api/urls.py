@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from .views import *
 
 urlpatterns = [
@@ -17,4 +17,15 @@ post_urls =[
     url(r'^/(?P<pk>\d+)/photos$', PostPhotoList.as_view(), name='postphoto-list'),
     url(r'^/(?P<pk>\d+)$', PostDetail.as_view(), name='post-detail'),
     url(r'^$', PostList.as_view(), name='post-list')
+]
+
+photo_urls =[
+    url(r'^/(?P<pk>\d+)$', PhotoDetail.as_view(), name='photo-detail'),
+    url(r'^$', PhotoList.as_view(), name='photo-list')
+]
+
+urlpatterns = [
+    url(r'^users', include(user_urls)),
+    url(r'^posts', include(post_urls)),
+    url(r'^photos', include(photo_urls)),
 ]

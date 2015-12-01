@@ -1,8 +1,8 @@
 https://github.com/yeoman/generator-angular#readme
 sudo npm install -g grunt-cli bower yo generator-karma generator-angular
-sudo apt-get install python-dev python-setuptools
-sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev \
-    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+sudo apt-get install python-dev python-setuptools  \
+     install libtiff5-dev libjpeg8-dev zlib1g-dev \
+    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk -y
 
 
 sudo pip install Pillow
