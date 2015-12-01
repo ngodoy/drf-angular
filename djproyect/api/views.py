@@ -8,6 +8,7 @@ from .models import *
 
 class UserList(generics.ListAPIView):
     model = User
+    queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [
         permissions.AllowAny
@@ -15,6 +16,7 @@ class UserList(generics.ListAPIView):
 
 class UserDetail(generics.RetrieveAPIView):
     model = User
+    queryset = User.objects.all()
     serializer_class = UserSerializer
     lookup_field = 'username'
 
@@ -23,12 +25,14 @@ class UserPostList(generics.ListAPIView):
     serializer_class = PostSerializer
 
     def get_queryset(self):
-        queryset = super(UserPostList, self).get_queryset()
-        return queryset.filter(author__username=self.kwargs.get('username'))
+        username = self.kwargs['username']
+        return Post.objects.filter(author__username=username)
+
 
 
 class PhotoList(generics.ListCreateAPIView):
     model = Photo
+    queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
     permission_classes = [
         permissions.AllowAny
@@ -44,13 +48,13 @@ class PhotoDetail(generics.RetrieveUpdateDestroyAPIView):
 class PostPhotoList(generics.ListAPIView):
     model = Photo
     serializer_class = PhotoSerializer
-
     def get_queryset(self):
-        queryset = super(PostPhotoList, self).get_queryset()
-        return queryset.filter(post__pk=self.kwargs.get('pk'))
+        pk = self.kwargs['pk']
+        return Photo.objects.filter(post__pk=pk)
 
 class PostMixin(object):
     model = Post
+    queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [
         permissions.AllowAny #Custom

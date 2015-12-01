@@ -1,11 +1,7 @@
 from django.conf.urls import url, include
 from .views import *
 
-urlpatterns = [
-    #url(r'login/$', Login.as_view()),
-    #url(r'create/$', CreateUser.as_view()),
-    #url(r'list/$', UserList.as_view()),
-]
+
 
 user_urls =[
     url(r'^/(?P<username>[0-9a-zA-Z_-]+)/posts$', UserPostList.as_view(), name='userpost-list'),

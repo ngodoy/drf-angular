@@ -7,16 +7,15 @@ class AlbumSerializer(serializers.HyperlinkedModelSerializer):
     pass
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    posts = serializers.HyperlinkedIdentityField('posts', view_name='userpost-list', lookup_field='username')
+    posts = serializers.HyperlinkedIdentityField(view_name='userpost-list', lookup_field='username')
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'posts', )
+        fields = ('id', 'username', 'first_name', 'posts', )
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
-    author = UserSerializer(required=False)
-    photos = serializers.HyperlinkedIdentityField('photos', view_name='postphoto-list')
-    # author = serializers.HyperlinkedRelatedField(view_name='user-detail', lookup_field='username')
+    photos = serializers.HyperlinkedIdentityField(view_name='postphoto-list',lookup_field='pk')
+    author = serializers.HyperlinkedRelatedField(view_name='user-detail', lookup_field='username', read_only=True)
 
     def get_validation_exclusions(self, *args, **kwargs):
         # Need to exclude `user` since we'll add that later based off the request
@@ -28,7 +27,6 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class PhotoSerializer(serializers.ModelSerializer):
-    image = serializers.Field('image.url')
 
     class Meta:
         model = Photo
