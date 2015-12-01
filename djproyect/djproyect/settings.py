@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -54,6 +55,10 @@ ROOT_URLCONF = 'djproyect.urls'
 
 WSGI_APPLICATION = 'djproyect.wsgi.application'
 
+MEDIA_URL = '/media/'
+
+STATIC_URL = '/static/'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -85,3 +90,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+
+# Se indica cual modelo se utiliza como usuario del sistema (para autenticacion)
+AUTH_USER_MODEL = 'api.User'
+CUSTOM_USER_MODEL = 'api.User'
