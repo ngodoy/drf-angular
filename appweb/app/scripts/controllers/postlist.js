@@ -2,14 +2,13 @@
 
 /**
  * @ngdoc function
- * @name appwebApp.controller:MainCtrl
+ * @name appwebApp.controller:PostlistCtrl
  * @description
- * # MainCtrl
+ * # PostlistCtrl
  * Controller of the appwebApp
  */
 angular.module('appwebApp')
-  .controller('MainCtrl', function (PostListFactory) {
-    console.log(PostListFactory.get())
+  .controller('PostlistCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
