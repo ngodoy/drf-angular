@@ -9,7 +9,8 @@
  */
 angular.module('appwebApp')
   .controller('MainCtrl', function (PostListFactory) {
-    console.log(PostListFactory.get())
+
+    console.log(PostListFactory.query())
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

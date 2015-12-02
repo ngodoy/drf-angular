@@ -13,7 +13,6 @@ class UserList(generics.ListAPIView):
     permission_classes = [
         permissions.AllowAny
     ]
-
 class UserDetail(generics.RetrieveAPIView):
     model = User
     queryset = User.objects.all()

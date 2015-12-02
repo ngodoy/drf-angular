@@ -8,18 +8,22 @@
  * Factory in the appwebApp.
  */
 angular.module('appwebApp')
-  .factory('PostListFactory',['$resource', function($resource) {
+  .factory('PostListFactory',['$resource','SERVEAPI', function($resource,SERVEAPI) {
     // Service logic
     // ...
 
     var meaningOfLife = 42;
 
+    return $resource(SERVEAPI+'users',null,{
+
+    });
+    /**
     // Public API here
     return {
       someMethod: function () {
         return meaningOfLife;
       }
-    };
+    };*/
   }]);
 /**
 app.factory('Notes', ['$resource', function($resource) {

@@ -8,4 +8,4 @@
  * Constant in the appwebApp.
  */
 angular.module('appwebApp')
-  .constant('ServeApi', 'http://localhost:8000/api/users');
+  .constant('SERVEAPI', 'http://localhost:8000/api/');
