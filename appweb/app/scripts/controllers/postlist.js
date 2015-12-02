@@ -8,10 +8,13 @@
  * Controller of the appwebApp
  */
 angular.module('appwebApp')
-  .controller('PostlistCtrl', function () {
+  .controller('PostlistCtrl',['$scope','PostListFactory', function ($scope,PostListFactory) {
+        console.log(PostListFactory.query())
+        $scope.Posts=PostListFactory.query()
+
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+  }]);

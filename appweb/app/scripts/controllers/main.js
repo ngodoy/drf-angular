@@ -18,7 +18,7 @@ angular.module('appwebApp')
     //console.log(UserPostListFactory.query({userId:"karim"}))
     //console.log(UserPostListFactory.query({userId:"karim"}))
     //console.log(PhotoListFactory.query())
-    console.log(PhotoDetailFactory.get({photoId:1}))
+    //console.log(PhotoDetailFactory.get({photoId:1}))
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

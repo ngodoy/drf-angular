@@ -1,1 +1,14 @@
-<p>This is the PostList view.</p>
+<a ui-sref="newMovie" class="btn-primary btn-lg nodecoration">Add New Post</a>
+<table class="table movietable">
+    <tr>
+        <td><h3>All Posts</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="Post in Posts">
+        <td>{{Post.title}}</td>
+        <td>
+     <a class="btn btn-primary" ui-sref="viewPost({id:Post._id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteMovie(movie)">Delete</a>
+        </td>
+    </tr>
+</table>
