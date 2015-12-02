@@ -8,16 +8,14 @@
  * Factory in the appwebApp.
  */
 angular.module('appwebApp')
-  .factory('UserDetailFactory', function () {
+  .factory('UserDetailFactory', ['$resource','SERVEAPI', function($resource, SERVEAPI) {
     // Service logic
     // ...
 
     var meaningOfLife = 42;
 
     // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+    return $resource(SERVEAPI+'users/:userId',{userId:'@id'},{
+
+    });
+  }]);

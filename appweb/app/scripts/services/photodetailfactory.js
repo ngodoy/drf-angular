@@ -8,16 +8,15 @@
  * Factory in the appwebApp.
  */
 angular.module('appwebApp')
-  .factory('PhotoDetailFactory', function () {
+  .factory('PhotoDetailFactory', ['$resource','SERVEAPI', function($resource, SERVEAPI) {
     // Service logic
     // ...
 
     var meaningOfLife = 42;
 
     // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+    return $resource(SERVEAPI+'photos/:photoId',{photoId:'@id'},{
+
+    });
+  }]);
+

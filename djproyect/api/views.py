@@ -39,6 +39,7 @@ class PhotoList(generics.ListCreateAPIView):
 
 class PhotoDetail(generics.RetrieveUpdateDestroyAPIView):
     model = Photo
+    queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
     permission_classes = [
         permissions.AllowAny

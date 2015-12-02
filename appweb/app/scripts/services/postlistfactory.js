@@ -8,13 +8,13 @@
  * Factory in the appwebApp.
  */
 angular.module('appwebApp')
-  .factory('PostListFactory',['$resource','SERVEAPI', function($resource,SERVEAPI) {
+  .factory('PostListFactory',['$resource','SERVEAPI', function($resource, SERVEAPI) {
     // Service logic
     // ...
 
     var meaningOfLife = 42;
 
-    return $resource(SERVEAPI+'users',null,{
+    return $resource(SERVEAPI+'posts',null,{
 
     });
     /**
