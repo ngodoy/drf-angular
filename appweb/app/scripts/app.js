@@ -53,9 +53,13 @@ angular
       templateUrl: 'views/postlist.html',
       controller: 'PostlistCtrl',
     }).state('viewPost',{
-      url:'/posts/:id/',
-      templateUrl:'partials/movie-view.html',
-      controller:'MovieViewController'
+      url:'/posts/:id/views',
+      templateUrl:'views/post-view.html',
+      controller:'PostviewCtrl'
+    }).state('editPost',{
+      url:'/posts/:id/edit',
+      templateUrl:'views/post-edit.html',
+      controller:'PosteditCtrl'
     });
 
 

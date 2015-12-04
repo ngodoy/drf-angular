@@ -15,7 +15,7 @@ angular.module('appwebApp')
     var meaningOfLife = 42;
 
     // Public API here
-    return $resource(SERVEAPI+'photos/:postId',{postId:'@id'},{
+    return $resource(SERVEAPI+'posts/:postId',{postId:'@id'},{
 
     });
   }]);
